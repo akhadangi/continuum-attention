@@ -45,7 +45,6 @@ CA can be computed as **CA weights multiplied by the original value matrix**. Th
 | `summarize_paper.py`, `summarize_hp.py` | Development evaluation and paired seed statistics. |
 | `final_holdout.py`, `evaluate_hp_holdout.py` | Holdout evaluation scripts. The H/P one is explicitly exploratory. |
 | `examples/quickstart.py` | No download forward and backward demonstration on CPU or MPS. |
-| `docs/` | Historical original experiment protocol and H/P protocol. |
 
 ## Requirements
 
