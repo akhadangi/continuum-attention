@@ -1,0 +1,26 @@
+{
+  "scope": "User-provided Mac logs as of 2026-10-14; not the new paper confirmation experiment",
+  "provenance": "Pasted text(20261013-233422).txt, exact prior benchmark output",
+  "T192": {
+    "training": {"steps":2500,"batch_size":8,"train_tokens":3840000,"eval_seed":9090,"seeds":[1729,2718,3141]},
+    "records": [
+      {"seed":1729,"F_nll":1.079360,"S_nll":1.031349,"F_train_tps":39015.63,"S_train_tps":39988.52},
+      {"seed":2718,"F_nll":1.082914,"S_nll":1.039055,"F_train_tps":39581.63,"S_train_tps":39895.29},
+      {"seed":3141,"F_nll":1.080032,"S_nll":1.045075,"F_train_tps":39316.04,"S_train_tps":40120.13}
+    ],
+    "paired_F_minus_S_mean_nll":0.04227566666666667,
+    "paired_F_minus_S_student_t_95pct_ci":[0.025707764748454164,0.05884356858487917],
+    "caveat":"Only three seeds, learned-scale softmax F as control; development slice, not untouched holdout."
+  },
+  "T512": {
+    "training":{"steps":3750,"batch_size":2,"train_tokens":3840000,"eval_seed":null,"seeds_confirmed_in_supplied_logs":[1729]},
+    "records":[{"seed":1729,"F_nll":1.254326,"S_nll":1.207666,"F_train_tps":30179.29,"S_train_tps":28151.53}],
+    "paired_F_minus_S_mean_nll":0.04666,
+    "paired_F_minus_S_student_t_95pct_ci":null,
+    "caveat":"Only one 512-token training seed is present in the provided logs. Additional multi-seed 512 confidence intervals were mentioned by the user, but supporting results have not been provided in the available logs; do not fabricate or infer them."
+  },
+  "validation_corpus_sha256":"2367cba93ff5aed65961689187c708e59a890f0803249914b8fc0ef6515d9972",
+  "trained_corpus_sha256":"7708581afbaf4754daafb34839ced934da37eb3a58ce0daf37e84297bd0e7110",
+  "disjoint_tail_holdout_prepared_sha256":"d70cb8d77cfdb50736f37bea5e81a4958e6a1f69bba6630c98d16a65a5ebeaec",
+  "prior_holdout_nll":null
+}
