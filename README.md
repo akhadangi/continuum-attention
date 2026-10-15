@@ -1,10 +1,8 @@
-# Continuum Attention: Exact Metal implementation
+# Continuum Attention (working paper)
 
-Reference implementation of **Continuum Attention (CA)** for causal Transformers on **Apple Silicon / Metal Performance Shaders (MPS)**, including the precise piecewise linear memory integral, first order analytical gradients, CPU mathematical oracle, reproducibility tests, and the five seed TinyStories experiment scripts.
+Reference implementation of **Continuum Attention (CA)** for causal Transformers on **Apple Silicon / Metal Performance Shaders (MPS)**, including the piecewise linear memory integral, first order analytical gradients, CPU mathematical oracle, reproducibility tests, and the five seed TinyStories experiment scripts.
 
-The source is from the *actual implementation used in the reported Mac experiments*. `acma_metal.py`, `architecture.py`, `benchmark.py`, and their original tests are retained **unchanged**. The final H/P only experiment patch is included. The name `acma` remains in a few module names for historical compatibility; these modules implement Continuum Attention.
 
-> **Scope:** This repository contains a research prototype for Apple MPS and a CPU reference. It does not contain the separate experimental CUDA/V100 implementation. It does not include pretrained checkpoints, the dataset files, or measured run outputs. The original holdout was inspected before the H/P ablation; H/P holdout results are exploratory.
 
 ## How it works
 
@@ -105,7 +103,7 @@ The `metal_analytic` and `metal_long` paths **materialize the dense attention sc
 
 ## TinyStories: reproduce the experiment
 
-The original study used the first **16,000,000 UTF-8 bytes** of TinyStories training text and first **2,000,000 bytes** of TinyStories validation text. Its fixed reference cache is SHA256 verified by the experiment runner.
+The study used the first **16,000,000 UTF-8 bytes** of TinyStories training text and first **2,000,000 bytes** of TinyStories validation text. Its fixed reference cache is SHA256 verified by the experiment runner.
 
 Prepare the cache (requires access to Hugging Face datasets):
 
@@ -152,7 +150,7 @@ python summarize_hp.py \
 
 ### Holdout evaluations
 
-The earlier study evaluated the originally selected softmax controls and CA-S on a disjoint 4 MB validation tail. The H/P followup then reused that same slice, **after its results had already been inspected**, so comparisons involving H/P on that slice are exploratory. To reproduce the later exploratory evaluation, you must supply the same heldout bytes and the previous `FINAL_HOLDOUT_RESULTS.json` from the original evaluation:
+The study evaluated the originally selected softmax controls and CA-S on a disjoint 4 MB validation tail. The H/P followup then reused that same slice, **after its results had already been inspected**, so comparisons involving H/P on that slice are exploratory. To reproduce the later exploratory evaluation, you must supply the same heldout bytes and the previous `FINAL_HOLDOUT_RESULTS.json` from the original evaluation:
 
 ```bash
 python evaluate_hp_holdout.py \
@@ -176,21 +174,3 @@ Mean validation negative log likelihood, **nats per byte**, over the five seeds:
 | **CA-P, fixed $\tau=0.30$** | **1.009888** | **1.126540** |
 
 The primary matched fixed temperature comparison is **P versus B**. The average improvement was 0.0200 nats/byte at context 192 and 0.0480 at context 512, with five wins over five seeds at each context. The extra disjoint validation slice was previously inspected, so any later H/P comparisons on it are exploratory.
-
-## Publishing on GitHub
-
-The `.gitignore` excludes training data, checkpoints, local environment files, and generated results. Review the files and choose a project license before publishing. This archive intentionally does not assign a software license on your behalf.
-
-From this directory:
-
-```bash
-git init
-git add .
-git commit -m "Initial Continuum Attention Metal implementation"
-# After creating an empty repository on GitHub:
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-The SHA256 fingerprint of the original TinyStories cache can be inspected in `paper_experiment.py`. For reproducible comparisons, keep the data sampling protocol and evaluation settings fixed.
