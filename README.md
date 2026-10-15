@@ -1,3 +1,5 @@
+[![arXiv](https://img.shields.io/badge/arXiv-2610.20586-b31b1b.svg)](https://arxiv.org/abs/2610.20586)
+
 # Continuum Attention (working paper)
 
 Reference implementation of **Continuum Attention (CA)** for causal Transformers on **Apple Silicon / Metal Performance Shaders (MPS)**, including the piecewise linear memory integral, first order analytical gradients, CPU mathematical oracle, reproducibility tests, and the five seed TinyStories experiment scripts.
