@@ -2,7 +2,7 @@
 
 # Continuum Attention (working paper)
 
-Reference implementation of **Continuum Attention (CA)** for causal Transformers on **Apple Silicon / Metal Performance Shaders (MPS)**, including the piecewise linear memory integral, first order analytical gradients, CPU mathematical oracle, reproducibility tests, and the five seed TinyStories experiment scripts.
+Reference implementation of [**Continuum Attention (CA)**](https://arxiv.org/abs/2610.20586) for causal Transformers on **Apple Silicon / Metal Performance Shaders (MPS)**, including the piecewise linear memory integral, first order analytical gradients, CPU mathematical oracle, reproducibility tests, and the five seed TinyStories experiment scripts.
 
 
 
