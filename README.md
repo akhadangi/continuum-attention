@@ -246,11 +246,7 @@ The primary matched fixed temperature comparison is **P versus B**. The average 
 
 ## Source release and limitations
 
-The Metal source, CUDA source, and launch scripts are distributed without pretrained checkpoints or cached datasets. The CUDA package uses first-order analytic gradients, FP16 tensor-core matrix multiplications, and FP32 moment calculations. It does not provide incremental decoding or KV caching. The original TinyStories protocol is retained in `docs/ORIGINAL_PAPER_PROTOCOL.md`.
-
-Choose a software license appropriate for your work; this release does not assert a license that was not provided. When reporting CUDA results, distinguish mathematical operator runtime, full training throughput, and language-model loss.
-
-
+The Metal source, CUDA source, and launch scripts are distributed without pretrained checkpoints or cached datasets. The CUDA package uses first-order analytic gradients, FP16 tensor-core matrix multiplications, and FP32 moment calculations.
 ## Citation
 
 If you use Continuum Attention in your research, please cite:
