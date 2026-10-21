@@ -2,6 +2,12 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2610.20586-b31b1b.svg)](https://arxiv.org/abs/2610.20586)
 
+<p align="center">
+  <img src="assets/continuum_attention_results.png"
+       alt="Continuum Attention: 1.74x data efficiency, 2.4x lower GPU memory than Fast-Weight, and 4.8% lower bits per byte than Transformer"
+       width="100%">
+</p>
+
 **Continuum Attention (CA)** is causal attention over continuous, piecewise-linear key/value trajectories, using closed-form exponential moments and analytical first-order gradients.
 
 This repository provides two implementations:
