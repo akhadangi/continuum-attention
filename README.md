@@ -15,7 +15,7 @@ This repository provides two implementations:
 - **Apple Silicon / Metal:** the approximately 5M-parameter TinyStories experiments and five-seed comparisons reported in the paper.
 - **NVIDIA CUDA v6:** a separate 101,205,120-parameter CA-S decoder with full-context CUDA numerical/causality tests, single-GPU training and single-node Slurm launchers. See [CUDA documentation](cuda/README.md).
 
-The CUDA code uses learned per-head gains initialized at effective temperature $\tau=1$. The paper's strongest small-model CA-P variant instead uses a fixed $\tau=0.30$. The published five-seed model-quality results should not be attributed to the CUDA 100M experiment.
+The CUDA code uses learned per-head gains initialized at effective temperature $\tau=1$. The paper's strongest small-model CA-P variant instead uses a fixed $\tau=0.30$.
 
 ## How it works
 
