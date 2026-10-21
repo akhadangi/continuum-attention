@@ -219,7 +219,7 @@ python summarize_hp.py \
 
 ### Holdout evaluations
 
-The earlier study evaluated the originally selected softmax controls and CA-S on a disjoint 4 MB validation tail. The H/P followup then reused that same slice, **after its results had already been inspected**, so comparisons involving H/P on that slice are exploratory. To reproduce the later exploratory evaluation, you must supply the same heldout bytes and the previous `FINAL_HOLDOUT_RESULTS.json` from the original evaluation:
+The earlier study evaluated the originally selected softmax controls and CA-S on a disjoint 4 MB validation tail. The H/P followup then reused that same slice, **after its results had already been inspected**, so comparisons involving H/P on that slice are exploratory:
 
 ```bash
 python evaluate_hp_holdout.py \
@@ -228,7 +228,6 @@ python evaluate_hp_holdout.py \
   --holdout-file path/to/validation_heldout_next4m.bin
 ```
 
-The data, checkpoints, and reported measurement JSONs are **not distributed** in this source archive. Exact reproduction of published numeric results requires generating the same byte streams and running the full study. Details of the original protocol are retained in `docs/ORIGINAL_PAPER_PROTOCOL.md`.
 
 ## Reported development results
 
