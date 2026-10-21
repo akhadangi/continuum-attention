@@ -137,7 +137,7 @@ At `[batch, heads, tokens, head_dim] = [2,16,2048,64]`, query tile 128, on one T
 | v5 | 5.974 ms | 13.543 ms | 19.519 ms |
 | **v6** | **5.012 ms** | **11.587 ms** | **16.603 ms** |
 
-That is **1.176× faster isolated attention forward/backward** relative to v5. This result does **not** establish a corresponding end-to-end training speedup or improved model quality. Full-context forward perturbation and backward future-gradient checks passed at 2,048 tokens on V100; finite tests do not constitute a formal proof for all inputs.
+That is **1.176× faster isolated attention forward/backward** relative to v5. 
 
 ## Scope
 
