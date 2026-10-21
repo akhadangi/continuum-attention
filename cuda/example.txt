@@ -1,0 +1,3 @@
+Continuum Attention replaces causal discrete attention with exact integration over piecewise linear key and value curves.
+Each visible segment contributes closed form exponential moments; half token endpoint caps keep the boundaries correct.
+This is a small public smoke test input file, not a language modeling benchmark or reproduction of FineWeb-Edu.

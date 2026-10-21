@@ -1,0 +1,5 @@
+# Install a compatible CUDA-enabled PyTorch build separately (pytorch.org).
+datasets>=2.19,<5
+numpy>=1.24
+ninja>=1.11
+# Optional: wandb for experiment tracking
